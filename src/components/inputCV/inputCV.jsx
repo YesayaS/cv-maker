@@ -1,7 +1,6 @@
-import "../styles/inputCV.css";
+import "../../styles/inputCV.css";
 import { BasicInfo } from "./basicInfo";
 import { EducationInfo } from "./educationInfo";
-import { ProfessionalInfo } from "./professionalInfo";
 
 export function InputCV({
   basicInfo,
@@ -10,6 +9,7 @@ export function InputCV({
   handleBasicInfo,
   handleEducationInfo,
   handleProfessionalInfo,
+  handleAddEdu
 }) {
   return (
     <div>
@@ -17,6 +17,7 @@ export function InputCV({
       <EducationInfo
         educationInfo={educationInfo}
         onChange={handleEducationInfo}
+        onClick={handleAddEdu}
       ></EducationInfo>
       {/* <ProfessionalInfo professionalInfo={professionalInfo} onChange={handleProfessionalInfo}></ProfessionalInfo> */}
     </div>

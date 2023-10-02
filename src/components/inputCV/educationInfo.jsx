@@ -1,4 +1,4 @@
-export function EducationInfo({ educationInfo, onChange }) {
+export function EducationInfo({ educationInfo, onChange, onClick }) {
   return (
     <div>
       <h1>Education Experience</h1>
@@ -11,7 +11,7 @@ export function EducationInfo({ educationInfo, onChange }) {
                 <input
                   id="degree"
                   type="text"
-                  onChange={(e)=>onChange(e, i)}
+                  onChange={(e) => onChange(e, i)}
                   value={info.degree}
                   data-key="degree"
                 />
@@ -21,7 +21,7 @@ export function EducationInfo({ educationInfo, onChange }) {
                 <input
                   id="school"
                   type="text"
-                  onChange={(e)=>onChange(e, i)}
+                  onChange={(e) => onChange(e, i)}
                   value={info.school}
                   data-key="school"
                 />
@@ -31,7 +31,7 @@ export function EducationInfo({ educationInfo, onChange }) {
                 <input
                   id="startDate"
                   type="text"
-                  onChange={(e)=>onChange(e, i)}
+                  onChange={(e) => onChange(e, i)}
                   value={info.startDate}
                   data-key="startDate"
                 />
@@ -41,7 +41,7 @@ export function EducationInfo({ educationInfo, onChange }) {
                 <input
                   id="endDate"
                   type="text"
-                  onChange={(e)=>onChange(e, i)}
+                  onChange={(e) => onChange(e, i)}
                   value={info.endDate}
                   data-key="endDate"
                 />
@@ -50,6 +50,7 @@ export function EducationInfo({ educationInfo, onChange }) {
           </div>
         );
       })}
+      <button onClick={onClick}>Add +</button>
     </div>
   );
 }

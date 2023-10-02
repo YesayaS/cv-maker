@@ -1,11 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import "./components/inputCV";
-import "./components/previewCV";
-import "./templateData";
-import { InputCV } from "./components/inputCV";
-import { PreviewCV } from "./components/previewCV";
+import { InputCV } from "./components/inputCV/inputCV";
+import { PreviewCV } from "./components/previewCV/previewCV";
 import { templateData } from "./templateData";
+import uniqid from "uniqid";
 
 function App() {
   const [basicInfo, setBasicInfo] = useState(templateData.basicInfo);
@@ -25,7 +23,7 @@ function App() {
     const inputValue = e.target.value;
     const updatedEducationInfo = [...educationInfo];
     updatedEducationInfo[i][key] = inputValue;
-    setEducationInfo(updatedEducationInfo)
+    setEducationInfo(updatedEducationInfo);
   }
   function handleProfessionalInfo(e, i) {
     const key = e.target.dataset.key;
@@ -33,6 +31,18 @@ function App() {
     const updatedProfessionalInfo = [...professionalInfo];
     updatedProfessionalInfo[i][key] = inputValue;
     setProfessionalInfo(updatedEducationInfo);
+  }
+  function handleAddEdu(){
+    const id = uniqid()
+    const templateInfo = {
+      degree: "Bachelor of Science",
+      school: "London University",
+      startDate: "09/2021",
+      endDate: "09/2022",
+      id: id,
+    }
+    const newEducationInfo = [...educationInfo, templateInfo]
+    setEducationInfo(newEducationInfo)
   }
   return (
     <>
@@ -44,8 +54,13 @@ function App() {
           handleBasicInfo={handleBasicInfo}
           handleEducationInfo={handleEducationInfo}
           handleProfessionalInfo={handleProfessionalInfo}
+          handleAddEdu={handleAddEdu}
         ></InputCV>
-        <PreviewCV></PreviewCV>
+        <PreviewCV
+          basicInfo={basicInfo}
+          educationInfo={educationInfo}
+          professionalInfo={professionalInfo}
+        ></PreviewCV>
       </div>
     </>
   );

@@ -14,13 +14,13 @@ export const templateData = {
       endDate: "09/2022",
       id: uniqid(),
     },
-    {
-      degree: "Bachelor of Science",
-      school: "London University",
-      startDate: "09/2021",
-      endDate: "09/2022",
-      id: uniqid(),
-    },
+    // {
+    //   degree: "Bachelor of Science",
+    //   school: "London University",
+    //   startDate: "09/2021",
+    //   endDate: "09/2022",
+    //   id: uniqid(),
+    // },
   ],
   professionalInfo: [
     {
