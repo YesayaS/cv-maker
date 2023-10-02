@@ -1,16 +1,13 @@
-import { useState } from "react";
 import { PreviewBasicInfo } from "./previewBasicInfo";
 import { PreviewEduInfo } from "./previewEduInfo";
 import { PreviewProfInfo } from "./previewProfInfo";
 
-import "../../styles/previewCV.css";
-
 export function PreviewCV({ basicInfo, educationInfo, professionalInfo }) {
   return (
-    <div>
+    <div className="flex w-a4 h-a4 flex-col bg-white p-10 m-5 font-serif">
       <PreviewBasicInfo info={basicInfo}></PreviewBasicInfo>
-      <PreviewEduInfo info={educationInfo}></PreviewEduInfo>
       <PreviewProfInfo info={professionalInfo}></PreviewProfInfo>
+      <PreviewEduInfo info={educationInfo}></PreviewEduInfo>
     </div>
   );
 }

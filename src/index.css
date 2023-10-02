@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply h-screen w-screen bg-neutral-100;
+}
+
+button{
+    @apply bg-orange-400 p-1 border-r-4
+}
+
+label {
+  @apply ml-1 text-sm;
+}
+
+input {
+  @apply border-2 border-black bg-white px-2;
+}
+
+input:focus {
+  @apply border-r-2;
+}
+
+.formContainer {
+  @apply mx-5 my-2 rounded-lg bg-white px-5 py-2 pb-4 drop-shadow-xl;
+}
+
+h1 {
+  @apply text-xl font-bold;
+}
+
+h2 {
+  @apply text-lg font-bold;
+}

@@ -3,64 +3,69 @@ export function ProfessionalInfo({ professionalInfo, handlers }) {
     handlers;
   const onChange = handleProfessionalInfo;
   return (
-    <div>
-      <h1>Professional Experience</h1>
+    <div className="formContainer">
+      <h2>Professional Experience</h2>
       {professionalInfo.map((info, i) => {
         return (
           <div key={info.id}>
-            <button onClick={(e) => handleRemoveProfInfo(i)}>
+            <button onClick={() => handleRemoveProfInfo(i)}>
               Remove ProfExp
             </button>
             <ul>
               <li>
-                <label>Company
+                <label>Company</label>
+                <br />
                 <input
-                  class="companyName"
+                  className="companyName"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.companyName}
                   data-key="companyName"
-                /></label>
+                />
               </li>
               <li>
-                <label>Job Title
+                <label>Job Title</label>
+                <br />
                 <input
-                  class="jobTitle"
+                  className="jobTitle"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.jobTitle}
                   data-key="jobTitle"
-                /></label>
+                />
               </li>
               <li>
-                <label>Description
+                <label>Description</label>
+                <br />
                 <input
-                  class="description"
+                  className="description"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.description}
                   data-key="description"
-                /></label>
+                />
               </li>
               <li>
-                <label>End Date
+                <label>End Date</label>
+                <br />
                 <input
-                  class="startDate"
+                  className="startDate"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.startDate}
                   data-key="startDate"
-                /></label>
+                />
               </li>
               <li>
-                <label>End Date
+                <label>End Date</label>
+                <br />
                 <input
-                  class="endDate"
+                  className="endDate"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.endDate}
                   data-key="endDate"
-                /></label>
+                />
               </li>
             </ul>
           </div>

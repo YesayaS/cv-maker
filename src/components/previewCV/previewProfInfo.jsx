@@ -1,6 +1,8 @@
 export function PreviewProfInfo({ info }) {
+  const space = "\u00A0";
   return (
     <div>
+      <h2 className="border-b-2 border-black text-lg">Experience</h2>
       {info.map((prof) => {
         const id = prof.id;
         const companyName = prof.companyName;
@@ -10,11 +12,17 @@ export function PreviewProfInfo({ info }) {
         const endDate = prof.endDate;
         return (
           <div key={id}>
-            <p>{companyName}</p>
+            <div className="flex justify-between font-semibold pt-2">
+              <p>{companyName}</p>
+              <div className="flex">
+                <p>
+                  {startDate} - {space}
+                </p>
+                <p> {endDate}</p>
+              </div>
+            </div>
             <p>{jobTitle}</p>
-            <p>{description}</p>
-            <p>{startDate}</p>
-            <p>{endDate}</p>
+            <p className="pl-2">{description}</p>
           </div>
         );
       })}

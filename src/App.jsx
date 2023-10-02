@@ -85,7 +85,7 @@ function App() {
   };
   return (
     <>
-      <div className="app">
+      <div className="flex justify-center">
         <InputCV
           basicInfo={basicInfo}
           educationInfo={educationInfo}

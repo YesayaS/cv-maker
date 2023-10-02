@@ -3,11 +3,12 @@ export function BasicInfo({ basicInfo, onChange }) {
   const email = basicInfo.email;
   const phone = basicInfo.phoneNumber;
   return (
-    <div>
-      <h1>Basic Information</h1>
+    <div className="formContainer">
+      <h2>Basic Information</h2>
       <ul>
         <li>
           <label htmlFor="name">Full Name</label>
+          <br />
           <input
             id="name"
             type="text"
@@ -18,6 +19,7 @@ export function BasicInfo({ basicInfo, onChange }) {
         </li>
         <li>
           <label htmlFor="email">Email</label>
+          <br />
           <input
             id="email"
             type="email"
@@ -28,6 +30,7 @@ export function BasicInfo({ basicInfo, onChange }) {
         </li>
         <li>
           <label htmlFor="phone">Phone</label>
+          <br />
           <input
             id="phone"
             type="tel"
