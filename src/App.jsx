@@ -44,6 +44,11 @@ function App() {
     const newEducationInfo = [...educationInfo, templateInfo]
     setEducationInfo(newEducationInfo)
   }
+  function handleRemoveEdu(i){
+    const updatedEduInfo = [...educationInfo]
+    updatedEduInfo.splice(i,1)
+    setEducationInfo(updatedEduInfo)
+  }
   return (
     <>
       <div className="app">
@@ -55,6 +60,7 @@ function App() {
           handleEducationInfo={handleEducationInfo}
           handleProfessionalInfo={handleProfessionalInfo}
           handleAddEdu={handleAddEdu}
+          handleRemoveEdu={handleRemoveEdu}
         ></InputCV>
         <PreviewCV
           basicInfo={basicInfo}

@@ -1,10 +1,11 @@
-export function EducationInfo({ educationInfo, onChange, onClick }) {
+export function EducationInfo({ educationInfo, onChange, addEdu, removeEdu }) {
   return (
     <div>
       <h1>Education Experience</h1>
       {educationInfo.map((info, i) => {
         return (
           <div className="edu-form" key={info.id}>
+            <button onClick={(e)=>removeEdu(i)}>Remove Edu</button>
             <ul>
               <li>
                 <label htmlFor="degree">Degree</label>
@@ -50,7 +51,7 @@ export function EducationInfo({ educationInfo, onChange, onClick }) {
           </div>
         );
       })}
-      <button onClick={onClick}>Add +</button>
+      <button onClick={addEdu}>Add +</button>
     </div>
   );
 }

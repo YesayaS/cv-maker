@@ -9,7 +9,8 @@ export function InputCV({
   handleBasicInfo,
   handleEducationInfo,
   handleProfessionalInfo,
-  handleAddEdu
+  handleAddEdu,
+  handleRemoveEdu
 }) {
   return (
     <div>
@@ -17,7 +18,8 @@ export function InputCV({
       <EducationInfo
         educationInfo={educationInfo}
         onChange={handleEducationInfo}
-        onClick={handleAddEdu}
+        addEdu={handleAddEdu}
+        removeEdu={handleRemoveEdu}
       ></EducationInfo>
       {/* <ProfessionalInfo professionalInfo={professionalInfo} onChange={handleProfessionalInfo}></ProfessionalInfo> */}
     </div>
