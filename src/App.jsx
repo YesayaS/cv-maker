@@ -18,6 +18,7 @@ function App() {
     const { key } = e.target.dataset;
     setBasicInfo({ ...basicInfo, [key]: e.target.value });
   }
+  
   function handleEducationInfo(e, i) {
     const key = e.target.dataset.key;
     const inputValue = e.target.value;
@@ -25,13 +26,7 @@ function App() {
     updatedEducationInfo[i][key] = inputValue;
     setEducationInfo(updatedEducationInfo);
   }
-  function handleProfessionalInfo(e, i) {
-    const key = e.target.dataset.key;
-    const inputValue = e.target.value;
-    const updatedProfessionalInfo = [...professionalInfo];
-    updatedProfessionalInfo[i][key] = inputValue;
-    setProfessionalInfo(updatedEducationInfo);
-  }
+
   function handleAddEdu(){
     const id = uniqid()
     const templateInfo = {
@@ -44,10 +39,25 @@ function App() {
     const newEducationInfo = [...educationInfo, templateInfo]
     setEducationInfo(newEducationInfo)
   }
+  
   function handleRemoveEdu(i){
     const updatedEduInfo = [...educationInfo]
     updatedEduInfo.splice(i,1)
     setEducationInfo(updatedEduInfo)
+  }
+
+  function handleProfessionalInfo(e, i) {
+    const key = e.target.dataset.key;
+    const inputValue = e.target.value;
+    const updatedProfessionalInfo = [...professionalInfo];
+    updatedProfessionalInfo[i][key] = inputValue;
+    setProfessionalInfo(updatedEducationInfo);
+  }
+
+  const eduHandlers = {
+    handleEducationInfo: handleEducationInfo,
+    handleAddEdu: handleAddEdu,
+    handleRemoveEdu: handleRemoveEdu
   }
   return (
     <>
@@ -57,10 +67,8 @@ function App() {
           educationInfo={educationInfo}
           professionalInfo={professionalInfo}
           handleBasicInfo={handleBasicInfo}
-          handleEducationInfo={handleEducationInfo}
+          eduHandlers={eduHandlers}
           handleProfessionalInfo={handleProfessionalInfo}
-          handleAddEdu={handleAddEdu}
-          handleRemoveEdu={handleRemoveEdu}
         ></InputCV>
         <PreviewCV
           basicInfo={basicInfo}

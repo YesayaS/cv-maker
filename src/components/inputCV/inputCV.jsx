@@ -7,19 +7,15 @@ export function InputCV({
   educationInfo,
   professionalInfo,
   handleBasicInfo,
-  handleEducationInfo,
   handleProfessionalInfo,
-  handleAddEdu,
-  handleRemoveEdu
+  eduHandlers,
 }) {
   return (
     <div>
       <BasicInfo basicInfo={basicInfo} onChange={handleBasicInfo}></BasicInfo>
       <EducationInfo
         educationInfo={educationInfo}
-        onChange={handleEducationInfo}
-        addEdu={handleAddEdu}
-        removeEdu={handleRemoveEdu}
+        eduHandlers={eduHandlers}
       ></EducationInfo>
       {/* <ProfessionalInfo professionalInfo={professionalInfo} onChange={handleProfessionalInfo}></ProfessionalInfo> */}
     </div>

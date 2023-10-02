@@ -1,11 +1,13 @@
-export function EducationInfo({ educationInfo, onChange, addEdu, removeEdu }) {
+export function EducationInfo({ educationInfo, eduHandlers }) {
+  const { handleEducationInfo, handleAddEdu, handleRemoveEdu } = eduHandlers;
+  const onChange = handleEducationInfo;
   return (
     <div>
       <h1>Education Experience</h1>
       {educationInfo.map((info, i) => {
         return (
           <div className="edu-form" key={info.id}>
-            <button onClick={(e)=>removeEdu(i)}>Remove Edu</button>
+            <button onClick={(e) => handleRemoveEdu(i)}>Remove Edu</button>
             <ul>
               <li>
                 <label htmlFor="degree">Degree</label>
@@ -51,7 +53,7 @@ export function EducationInfo({ educationInfo, onChange, addEdu, removeEdu }) {
           </div>
         );
       })}
-      <button onClick={addEdu}>Add +</button>
+      <button onClick={handleAddEdu}>Add +</button>
     </div>
   );
 }

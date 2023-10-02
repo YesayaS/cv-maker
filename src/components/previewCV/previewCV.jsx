@@ -4,7 +4,7 @@ import { PreviewEduInfo } from "./previewEduInfo";
 
 import "../../styles/previewCV.css";
 
-export function PreviewCV({basicInfo, educationInfo, professionalInfo}) {
+export function PreviewCV({ basicInfo, educationInfo, professionalInfo }) {
   return (
     <div>
       <PreviewBasicInfo info={basicInfo}></PreviewBasicInfo>
