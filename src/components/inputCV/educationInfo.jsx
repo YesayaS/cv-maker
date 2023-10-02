@@ -10,44 +10,44 @@ export function EducationInfo({ educationInfo, eduHandlers }) {
             <button onClick={(e) => handleRemoveEdu(i)}>Remove Edu</button>
             <ul>
               <li>
-                <label htmlFor="degree">Degree</label>
+                <label >Degree
                 <input
-                  id="degree"
+                  class="degree"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.degree}
                   data-key="degree"
-                />
+                /></label>
               </li>
               <li>
-                <label htmlFor="school">School</label>
+                <label >School
                 <input
-                  id="school"
+                  class="school"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.school}
                   data-key="school"
-                />
+                /></label>
               </li>
               <li>
-                <label htmlFor="startDate">Start</label>
+                <label >Start
                 <input
-                  id="startDate"
+                  class="startDate"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.startDate}
                   data-key="startDate"
-                />
+                /></label>
               </li>
               <li>
-                <label htmlFor="endDate">End</label>
+                <label >End
                 <input
-                  id="endDate"
+                  class="endDate"
                   type="text"
                   onChange={(e) => onChange(e, i)}
                   value={info.endDate}
                   data-key="endDate"
-                />
+                /></label>
               </li>
             </ul>
           </div>
