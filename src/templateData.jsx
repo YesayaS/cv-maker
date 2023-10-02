@@ -24,11 +24,12 @@ export const templateData = {
   ],
   professionalInfo: [
     {
-      company: "Example Inc",
-      title: "Engineer",
+      companyName: "Example Inc",
+      jobTitle: "Engineer",
       description: "description here",
       startDate: "09/2022",
       endDate: "current",
+      id: uniqid(),
     },
   ],
 };
