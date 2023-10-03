@@ -1,4 +1,4 @@
-export function PreviewEduInfo({ info }) {
+export function PreviewEducation({ info }) {
   const space = "\u00A0";
   return (
     <div className="pt-5">
@@ -11,7 +11,7 @@ export function PreviewEduInfo({ info }) {
         const endDate = edu.endDate;
         return (
           <div key={id}>
-            <div className="flex justify-between font-semibold pt-2">
+            <div className="flex justify-between pt-2 font-semibold">
               <p>{school}</p>
               <div className="flex">
                 <p>

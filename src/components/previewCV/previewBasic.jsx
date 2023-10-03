@@ -1,4 +1,4 @@
-export function PreviewBasicInfo({ info }) {
+export function PreviewBasic({ info }) {
   const space = "\u00A0";
   const name = info.name ? info.name : space;
   const email = info.email ? info.email : "";

@@ -1,29 +1,26 @@
-import { BasicInfo } from "./basicInfo";
-import { EducationInfo } from "./educationInfo";
-import { ProfessionalInfo } from "./professionalInfo";
+import { Basic } from "./basic";
+import { Education } from "./education";
+import { Experience } from "./experience";
 
 export function InputCV({
-  basicInfo,
-  educationInfo,
-  professionalInfo,
-  handleBasicInfo,
-  eduHandlers,
-  profHandlers,
+  basic,
+  education,
+  experience,
+  handleBasic,
+  educationHandlers,
+  experienceHandlers,
 }) {
   return (
     <div className="m-3 flex flex-col">
       <div className="formContainer">
         <h1 className="text-xl font-bold">CV Maker</h1>
       </div>
-      <BasicInfo basicInfo={basicInfo} onChange={handleBasicInfo}></BasicInfo>
-      <ProfessionalInfo
-        professionalInfo={professionalInfo}
-        handlers={profHandlers}
-      ></ProfessionalInfo>
-      <EducationInfo
-        educationInfo={educationInfo}
-        eduHandlers={eduHandlers}
-      ></EducationInfo>
+      <Basic basic={basic} handlers={handleBasic}></Basic>
+      <Experience
+        experience={experience}
+        handlers={experienceHandlers}
+      ></Experience>
+      <Education education={education} handlers={educationHandlers}></Education>
     </div>
   );
 }

@@ -1,14 +1,14 @@
-export function ProfessionalInfo({ professionalInfo, handlers }) {
-  const { handleProfessionalInfo, handleAddProfInfo, handleRemoveProfInfo } =
+export function Experience({ experience, handlers }) {
+  const { handleExperience, handleAddExperience, handleRemoveExperience } =
     handlers;
-  const onChange = handleProfessionalInfo;
+  const onChange = handleExperience;
   return (
     <div className="formContainer">
       <h2>Professional Experience</h2>
-      {professionalInfo.map((info, i) => {
+      {experience.map((info, i) => {
         return (
           <div key={info.id}>
-            <button onClick={() => handleRemoveProfInfo(i)}>
+            <button onClick={() => handleRemoveExperience(i)}>
               Remove ProfExp
             </button>
             <ul>
@@ -71,7 +71,7 @@ export function ProfessionalInfo({ professionalInfo, handlers }) {
           </div>
         );
       })}
-      <button onClick={handleAddProfInfo}>Add +</button>
+      <button onClick={handleAddExperience}>Add +</button>
     </div>
   );
 }

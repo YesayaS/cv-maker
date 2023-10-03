@@ -1,4 +1,4 @@
-export function PreviewProfInfo({ info }) {
+export function PreviewExperience({ info }) {
   const space = "\u00A0";
   return (
     <div>
@@ -12,7 +12,7 @@ export function PreviewProfInfo({ info }) {
         const endDate = prof.endDate;
         return (
           <div key={id}>
-            <div className="flex justify-between font-semibold pt-2">
+            <div className="flex justify-between pt-2 font-semibold">
               <p>{companyName}</p>
               <div className="flex">
                 <p>

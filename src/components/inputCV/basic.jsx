@@ -1,7 +1,7 @@
-export function BasicInfo({ basicInfo, onChange }) {
-  const name = basicInfo.name;
-  const email = basicInfo.email;
-  const phone = basicInfo.phoneNumber;
+export function Basic({ basic, handlers }) {
+  const name = basic.name;
+  const email = basic.email;
+  const phone = basic.phoneNumber;
   return (
     <div className="formContainer">
       <h2>Basic Information</h2>
@@ -12,7 +12,7 @@ export function BasicInfo({ basicInfo, onChange }) {
           <input
             id="name"
             type="text"
-            onChange={onChange}
+            onChange={handlers}
             value={name}
             data-key="name"
           />
@@ -23,7 +23,7 @@ export function BasicInfo({ basicInfo, onChange }) {
           <input
             id="email"
             type="email"
-            onChange={onChange}
+            onChange={handlers}
             value={email}
             data-key="email"
           />
@@ -34,7 +34,7 @@ export function BasicInfo({ basicInfo, onChange }) {
           <input
             id="phone"
             type="tel"
-            onChange={onChange}
+            onChange={handlers}
             value={phone}
             data-key="phoneNumber"
           />

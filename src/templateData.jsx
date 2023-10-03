@@ -1,20 +1,19 @@
 import uniqid from "uniqid";
 
 export const templateData = {
-  basicInfo: {
+  basic: {
     name: "John doe",
     email: "johndoe@mail.com",
     phoneNumber: "1234567890",
   },
-  educationInfo: {
+  education: {
     degree: "Bachelor of Science",
     school: "London University",
     startDate: "09/2021",
     endDate: "09/2022",
     id: uniqid(),
   },
-
-  professionalInfo: {
+  experience: {
     companyName: "Example Inc",
     jobTitle: "Engineer",
     description: "description here",

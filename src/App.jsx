@@ -10,87 +10,87 @@ function App() {
     return JSON.parse(JSON.stringify(obj));
   }
 
-  const [basicInfo, setBasicInfo] = useState(deepCopy(templateData.basicInfo));
-  const [educationInfo, setEducationInfo] = useState([
-    deepCopy(templateData.educationInfo),
+  const [basic, setBasic] = useState(deepCopy(templateData.basic));
+  const [education, setEducation] = useState([
+    deepCopy(templateData.education),
   ]);
-  const [professionalInfo, setProfessionalInfo] = useState([
-    deepCopy(templateData.professionalInfo),
+  const [experience, setExperience] = useState([
+    deepCopy(templateData.experience),
   ]);
 
-  function handleBasicInfo(e) {
+  function handleBasic(e) {
     const { key } = e.target.dataset;
-    setBasicInfo({ ...basicInfo, [key]: e.target.value });
+    setBasic({ ...basic, [key]: e.target.value });
   }
 
-  function handleEducationInfo(e, i) {
+  function handleExperience(e, i) {
     const key = e.target.dataset.key;
     const inputValue = e.target.value;
-    const updatedEducationInfo = [...educationInfo];
-    updatedEducationInfo[i][key] = inputValue;
-    setEducationInfo(updatedEducationInfo);
+    const updatedExperience = [...experience];
+    updatedExperience[i][key] = inputValue;
+    setExperience(updatedExperience);
   }
 
-  function handleAddEdu() {
-    const templateInfo = deepCopy(templateData.educationInfo);
+  function handleAddExperience() {
+    const templateInfo = deepCopy(templateData.experience);
     templateInfo.id = uniqid();
-    const newEducationInfo = [...educationInfo, templateInfo];
-    setEducationInfo(newEducationInfo);
+    const updatedExperience = [...experience, templateInfo];
+    setExperience(updatedExperience);
   }
 
-  function handleRemoveEdu(i) {
-    const updatedEduInfo = [...educationInfo];
-    updatedEduInfo.splice(i, 1);
-    console.log(updatedEduInfo);
-    setEducationInfo(updatedEduInfo);
+  function handleRemoveExperience(i) {
+    const updatedExperience = [...experience];
+    updatedExperience.splice(i, 1);
+    setExperience(updatedExperience);
   }
 
-  function handleProfessionalInfo(e, i) {
+  function handleEducation(e, i) {
     const key = e.target.dataset.key;
     const inputValue = e.target.value;
-    const updatedProfInfo = [...professionalInfo];
-    updatedProfInfo[i][key] = inputValue;
-    setProfessionalInfo(updatedProfInfo);
+    const updatedEducation = [...education];
+    updatedEducation[i][key] = inputValue;
+    setEducation(updatedEducation);
   }
 
-  function handleAddProfInfo() {
-    const templateInfo = deepCopy(templateData.professionalInfo);
+  function handleAddEducation() {
+    const templateInfo = deepCopy(templateData.education);
     templateInfo.id = uniqid();
-    const updatedProfInfo = [...professionalInfo, templateInfo];
-    setProfessionalInfo(updatedProfInfo);
+    const updatedEducation = [...education, templateInfo];
+    setEducation(updatedEducation);
   }
 
-  function handleRemoveProfInfo(i) {
-    const updatedProfInfo = [...professionalInfo];
-    updatedProfInfo.splice(i, 1);
-    setProfessionalInfo(updatedProfInfo);
+  function handleRemoveEducation(i) {
+    const updatedEducation = [...education];
+    updatedEducation.splice(i, 1);
+    console.log(updatedEducation);
+    setEducation(updatedEducation);
   }
 
-  const eduHandlers = {
-    handleEducationInfo: handleEducationInfo,
-    handleAddEdu: handleAddEdu,
-    handleRemoveEdu: handleRemoveEdu,
+  const educationHandlers = {
+    handleEducation: handleEducation,
+    handleAddEducation: handleAddEducation,
+    handleRemoveEducation: handleRemoveEducation,
   };
-  const profHandlers = {
-    handleProfessionalInfo: handleProfessionalInfo,
-    handleAddProfInfo: handleAddProfInfo,
-    handleRemoveProfInfo: handleRemoveProfInfo,
+  const experienceHandlers = {
+    handleExperience: handleExperience,
+    handleAddExperience: handleAddExperience,
+    handleRemoveExperience: handleRemoveExperience,
   };
   return (
     <>
       <div className="flex justify-center">
         <InputCV
-          basicInfo={basicInfo}
-          educationInfo={educationInfo}
-          professionalInfo={professionalInfo}
-          handleBasicInfo={handleBasicInfo}
-          eduHandlers={eduHandlers}
-          profHandlers={profHandlers}
+          basic={basic}
+          education={education}
+          experience={experience}
+          handleBasic={handleBasic}
+          educationHandlers={educationHandlers}
+          experienceHandlers={experienceHandlers}
         ></InputCV>
         <PreviewCV
-          basicInfo={basicInfo}
-          educationInfo={educationInfo}
-          professionalInfo={professionalInfo}
+          basic={basic}
+          education={education}
+          experience={experience}
         ></PreviewCV>
       </div>
     </>

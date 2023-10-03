@@ -1,13 +1,13 @@
-import { PreviewBasicInfo } from "./previewBasicInfo";
-import { PreviewEduInfo } from "./previewEduInfo";
-import { PreviewProfInfo } from "./previewProfInfo";
+import { PreviewBasic } from "./previewBasic";
+import { PreviewExperience } from "./previewExperience";
+import { PreviewEducation } from "./previewEducation";
 
-export function PreviewCV({ basicInfo, educationInfo, professionalInfo }) {
+export function PreviewCV({ basic, education, experience }) {
   return (
     <div className="m-5 flex h-a4 w-a4 flex-col bg-white p-10 font-serif">
-      <PreviewBasicInfo info={basicInfo}></PreviewBasicInfo>
-      <PreviewProfInfo info={professionalInfo}></PreviewProfInfo>
-      <PreviewEduInfo info={educationInfo}></PreviewEduInfo>
+      <PreviewBasic info={basic}></PreviewBasic>
+      <PreviewExperience info={experience}></PreviewExperience>
+      <PreviewEducation info={education}></PreviewEducation>
     </div>
   );
 }
