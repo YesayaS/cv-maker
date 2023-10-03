@@ -21,6 +21,13 @@ export function Education({ education, handlers }) {
         return (
           <div key={info.id} className="formContainer">
             <div className="formHeader">
+              <i
+                className={`material-symbols-outlined ${
+                  isShow[i] ? "expand" : ""
+                }`}
+              >
+                expand_more
+              </i>
               <button onClick={() => changeIsShow(i)}> {info.school}</button>
               <button
                 className="deleteForm"
@@ -29,13 +36,13 @@ export function Education({ education, handlers }) {
                 <i className="material-symbols-outlined">delete</i>
               </button>
             </div>
-            {!isShow[i] ? null : (
-              <EducationForm
-                info={info}
-                onChange={onChange}
-                i={i}
-              ></EducationForm>
-            )}
+
+            <EducationForm
+              isShow={isShow[i]}
+              info={info}
+              onChange={onChange}
+              i={i}
+            ></EducationForm>
           </div>
         );
       })}

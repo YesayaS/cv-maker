@@ -1,7 +1,7 @@
-export function ExperienceForm({ info, onChange, i }) {
+export function ExperienceForm({ isShow, info, onChange, i }) {
   return (
-    <>
-      <ul className="formBorder">
+    <div className={`formBorder ${isShow ? "visible" : ""}`}>
+      <ul>
         <li>
           <label>Company</label>
           <br />
@@ -58,6 +58,6 @@ export function ExperienceForm({ info, onChange, i }) {
           />
         </li>
       </ul>
-    </>
+    </div>
   );
 }

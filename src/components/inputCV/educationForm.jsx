@@ -1,7 +1,7 @@
-export function EducationForm({ info, onChange, i }) {
+export function EducationForm({ isShow, info, onChange, i }) {
   return (
-    <>
-      <ul className="formBorder">
+    <div className={`formBorder ${isShow ? "visible" : ""}`}>
+      <ul>
         <li>
           <label>School</label>
           <br />
@@ -47,6 +47,6 @@ export function EducationForm({ info, onChange, i }) {
           />
         </li>
       </ul>
-    </>
+    </div>
   );
 }

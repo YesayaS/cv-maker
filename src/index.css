@@ -7,7 +7,7 @@ body {
 }
 
 button {
-  @apply flex items-center text-center
+  @apply flex items-center text-center;
 }
 
 label {
@@ -15,7 +15,7 @@ label {
 }
 
 input {
-  @apply border-2 border-neutral-200 bg-white p-1 w-full text-base mb-2 focus:border-r-2 focus:border-neutral-800 transition-all;
+  @apply mb-2 w-full border-2 border-neutral-200 bg-white p-1 text-base transition-all focus:border-r-2 focus:border-neutral-800;
 }
 
 h1 {
@@ -27,33 +27,57 @@ h2 {
 }
 
 .sectionContainer {
-  @apply mx-5 my-2 rounded-lg bg-white px-5 py-2 pb-3 drop-shadow-xl;
+  @apply  drop-shadow-xl bg-white m-2 p-4 rounded-md;
 }
 
-.formContainer{
-  @apply border-4 border-neutral-200 rounded-md p-2 mb-2
+.formContainer {
+  @apply mb-2 mt-2;
 }
 
-.formHeader{
-@apply flex justify-between text-lg font-medium
+.formHeader {
+  @apply flex justify-between items-center text-lg font-medium border-4 border-r-4 border-neutral-200 px-2 py-1;
 }
 
-.formHeader > button:first-of-type{
-  @apply w-full text-left
+.formHeader > button:first-of-type {
+  @apply w-full text-left;
 }
 
-.formBorder{
-  @apply mt-2 border-t-4 pt-1
+.formBorder {
+  display:none;
+  @apply  opacity-0 bg-white border-b-4 border-l-4 border-r-4 border-neutral-200 px-2;
 }
 
-.addFormButton{
-  @apply flex justify-end 
+.visible{
+  display: block;
+  animation: 0.2s dropdown-animate;
+  transform-origin: top;
+  @apply  opacity-100
 }
 
-.addFormButton>button{
-  @apply bg-orange-500 rounded-2xl hover:bg-orange-300 transition-colors px-3 active:scale-95 py-1
+@keyframes dropdown-animate {
+  0%{
+    transform: scaleY(0);
+  }
+
+  100%{
+    transform: scaleY(1);
+  }
+}
+
+.addFormButton {
+  @apply flex justify-end;
+}
+
+.addFormButton > button {
+  @apply rounded-2xl bg-orange-500 px-3 py-1 transition-colors hover:bg-orange-300 active:scale-95;
 }
 
 .deleteForm {
-  @apply p-1 transition-colors rounded-2xl hover:bg-neutral-300
+  @apply rounded-2xl p-1 transition-colors hover:bg-neutral-300;
+}
+
+i{@apply transition}
+
+i.expand{
+  @apply rotate-180
 }

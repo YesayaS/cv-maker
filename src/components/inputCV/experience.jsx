@@ -22,6 +22,13 @@ export function Experience({ experience, handlers }) {
         return (
           <div key={info.id} className="formContainer">
             <div className="formHeader">
+              <i
+                className={`material-symbols-outlined ${
+                  isShow[i] ? "expand" : ""
+                }`}
+              >
+                expand_more
+              </i>
               <button onClick={() => changeIsShow(i)}>
                 {info.companyName}
               </button>
@@ -32,13 +39,12 @@ export function Experience({ experience, handlers }) {
                 <i className="material-symbols-outlined">delete</i>
               </button>
             </div>
-            {!isShow[i] ? null : (
-              <ExperienceForm
-                info={info}
-                onChange={handleExperience}
-                i={i}
-              ></ExperienceForm>
-            )}
+            <ExperienceForm
+              isShow={isShow[i]}
+              info={info}
+              onChange={handleExperience}
+              i={i}
+            ></ExperienceForm>
           </div>
         );
       })}
