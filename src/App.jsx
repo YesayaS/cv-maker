@@ -62,7 +62,6 @@ function App() {
   function handleRemoveEducation(i) {
     const updatedEducation = [...education];
     updatedEducation.splice(i, 1);
-    console.log(updatedEducation);
     setEducation(updatedEducation);
   }
 
