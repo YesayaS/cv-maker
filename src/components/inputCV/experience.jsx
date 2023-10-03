@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ExperienceForm } from "./experienceForm";
-// import { TrashIcon } from "@heroicons/react/20/solid";
 import "material-icons/iconfont/outlined.css";
 
 export function Experience({ experience, handlers }) {

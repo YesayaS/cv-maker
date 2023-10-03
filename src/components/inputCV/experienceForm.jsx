@@ -27,7 +27,7 @@ export function ExperienceForm({ isShow, info, onChange, i }) {
         <li>
           <label>Description</label>
           <br />
-          <input
+          <textarea
             className="description"
             type="text"
             onChange={(e) => onChange(e, i)}

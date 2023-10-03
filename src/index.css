@@ -14,6 +14,10 @@ label {
   @apply ml-1;
 }
 
+textarea{
+  @apply w-full px-1 py-1 resize-none border-2 border-neutral-200 bg-white
+}
+
 input {
   @apply mb-2 w-full border-2 border-neutral-200 bg-white p-1 text-base transition-all focus:border-r-2 focus:border-neutral-800;
 }
