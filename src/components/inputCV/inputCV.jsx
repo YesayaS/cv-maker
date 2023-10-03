@@ -16,14 +16,14 @@ export function InputCV({
         <h1 className="text-xl font-bold">CV Maker</h1>
       </div>
       <BasicInfo basicInfo={basicInfo} onChange={handleBasicInfo}></BasicInfo>
-      <EducationInfo
-        educationInfo={educationInfo}
-        eduHandlers={eduHandlers}
-      ></EducationInfo>
       <ProfessionalInfo
         professionalInfo={professionalInfo}
         handlers={profHandlers}
       ></ProfessionalInfo>
+      <EducationInfo
+        educationInfo={educationInfo}
+        eduHandlers={eduHandlers}
+      ></EducationInfo>
     </div>
   );
 }
