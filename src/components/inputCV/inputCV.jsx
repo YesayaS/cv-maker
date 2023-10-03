@@ -11,7 +11,7 @@ export function InputCV({
   profHandlers,
 }) {
   return (
-    <div className="flex flex-col m-3">
+    <div className="m-3 flex flex-col">
       <div className="formContainer">
         <h1 className="text-xl font-bold">CV Maker</h1>
       </div>
