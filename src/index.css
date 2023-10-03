@@ -6,8 +6,8 @@ body {
   @apply h-screen w-screen bg-neutral-100;
 }
 
-button{
-    @apply bg-orange-400 p-1 border-r-4
+button {
+  @apply border-r-4 bg-orange-400 p-1;
 }
 
 label {

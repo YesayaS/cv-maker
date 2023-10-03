@@ -1,4 +1,15 @@
+import { useState } from "react";
+import { EducationForm } from "./educationForm";
 export function Education({ education, handlers }) {
+  const arrayStatus = [...Array(education.length).fill(false)];
+  const [isShow, setIsShow] = useState(arrayStatus);
+
+  function changeIsShow(i) {
+    const updatedIsShow = [...isShow];
+    updatedIsShow[i] = !updatedIsShow[i];
+    setIsShow(updatedIsShow);
+  }
+
   const { handleEducation, handleAddEducation, handleRemoveEducation } =
     handlers;
   const onChange = handleEducation;
@@ -7,54 +18,16 @@ export function Education({ education, handlers }) {
       <h2>Education Experience</h2>
       {education.map((info, i) => {
         return (
-          <div className="edu-form" key={info.id}>
+          <div key={info.id}>
+            <button onClick={() => changeIsShow(i)}> {info.school}</button>
             <button onClick={() => handleRemoveEducation(i)}>Remove Edu</button>
-            <ul>
-              <li>
-                <label>Degree</label>
-                <br />
-                <input
-                  className="degree"
-                  type="text"
-                  onChange={(e) => onChange(e, i)}
-                  value={info.degree}
-                  data-key="degree"
-                />
-              </li>
-              <li>
-                <label>School</label>
-                <br />
-                <input
-                  className="school"
-                  type="text"
-                  onChange={(e) => onChange(e, i)}
-                  value={info.school}
-                  data-key="school"
-                />
-              </li>
-              <li>
-                <label>Start</label>
-                <br />
-                <input
-                  className="startDate"
-                  type="text"
-                  onChange={(e) => onChange(e, i)}
-                  value={info.startDate}
-                  data-key="startDate"
-                />
-              </li>
-              <li>
-                <label>End</label>
-                <br />
-                <input
-                  className="endDate"
-                  type="text"
-                  onChange={(e) => onChange(e, i)}
-                  value={info.endDate}
-                  data-key="endDate"
-                />
-              </li>
-            </ul>
+            {!isShow[i] ? null : (
+              <EducationForm
+                info={info}
+                onChange={onChange}
+                i={i}
+              ></EducationForm>
+            )}
           </div>
         );
       })}
