@@ -7,7 +7,7 @@ body {
 }
 
 button {
-  @apply flex items-center text-center;
+  @apply truncate  flex items-center text-center;
 }
 
 label {

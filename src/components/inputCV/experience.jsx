@@ -30,7 +30,7 @@ export function Experience({ experience, handlers }) {
                 expand_more
               </i>
               <button onClick={() => changeIsShow(i)}>
-                {info.companyName}
+                <p>{info.companyName}</p>
               </button>
               <button
                 className="deleteForm"
