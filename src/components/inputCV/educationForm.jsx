@@ -25,6 +25,17 @@ export function EducationForm({ isShow, info, onChange, i }) {
           />
         </li>
         <li>
+          <label>Description</label>
+          <br />
+          <textarea
+            className="description"
+            type="text"
+            onChange={(e) => onChange(e, i)}
+            value={info.description}
+            data-key="description"
+          />
+        </li>
+        <li>
           <label>Start</label>
           <br />
           <input

@@ -9,6 +9,7 @@ export const templateData = {
   education: {
     degree: "Bachelor of Science",
     school: "London University",
+    description: "description here",
     startDate: "09/2021",
     endDate: "09/2022",
     id: uniqid(),

@@ -7,6 +7,7 @@ export function PreviewEducation({ info }) {
         const id = edu.id;
         const degree = edu.degree;
         const school = edu.school;
+        const description = edu.description;
         const startDate = edu.startDate;
         const endDate = edu.endDate;
         return (
@@ -21,6 +22,7 @@ export function PreviewEducation({ info }) {
               </div>
             </div>
             <p>{degree}</p>
+            <p className="pl-2">{description}</p>
           </div>
         );
       })}
