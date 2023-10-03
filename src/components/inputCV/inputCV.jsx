@@ -11,8 +11,8 @@ export function InputCV({
   experienceHandlers,
 }) {
   return (
-    <div className="m-3 flex flex-col">
-      <div className="formContainer">
+    <div className="m-3 flex w-96 flex-col">
+      <div className="sectionContainer">
         <h1 className="text-xl font-bold">CV Maker</h1>
       </div>
       <Basic basic={basic} handlers={handleBasic}></Basic>

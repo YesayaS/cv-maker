@@ -1,18 +1,7 @@
 export function EducationForm({ info, onChange, i }) {
   return (
-    <div>
-      <ul>
-        <li>
-          <label>Degree</label>
-          <br />
-          <input
-            className="degree"
-            type="text"
-            onChange={(e) => onChange(e, i)}
-            value={info.degree}
-            data-key="degree"
-          />
-        </li>
+    <>
+      <ul className="formBorder">
         <li>
           <label>School</label>
           <br />
@@ -22,6 +11,17 @@ export function EducationForm({ info, onChange, i }) {
             onChange={(e) => onChange(e, i)}
             value={info.school}
             data-key="school"
+          />
+        </li>
+        <li>
+          <label>Degree</label>
+          <br />
+          <input
+            className="degree"
+            type="text"
+            onChange={(e) => onChange(e, i)}
+            value={info.degree}
+            data-key="degree"
           />
         </li>
         <li>
@@ -47,6 +47,6 @@ export function EducationForm({ info, onChange, i }) {
           />
         </li>
       </ul>
-    </div>
+    </>
   );
 }

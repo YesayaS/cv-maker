@@ -3,7 +3,7 @@ export function Basic({ basic, handlers }) {
   const email = basic.email;
   const phone = basic.phoneNumber;
   return (
-    <div className="formContainer">
+    <div className="sectionContainer">
       <h2>Basic Information</h2>
       <ul>
         <li>

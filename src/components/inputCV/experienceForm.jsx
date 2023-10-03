@@ -1,7 +1,7 @@
 export function ExperienceForm({ info, onChange, i }) {
   return (
     <>
-      <ul>
+      <ul className="formBorder">
         <li>
           <label>Company</label>
           <br />

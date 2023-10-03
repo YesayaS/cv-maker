@@ -12,6 +12,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "material-icons": "^1.13.12",
+    "material-symbols": "^0.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

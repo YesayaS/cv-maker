@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ExperienceForm } from "./experienceForm";
+// import { TrashIcon } from "@heroicons/react/20/solid";
+import "material-icons/iconfont/outlined.css";
 
 export function Experience({ experience, handlers }) {
   const arrayStatus = [...Array(experience.length).fill(false)];
@@ -14,13 +16,22 @@ export function Experience({ experience, handlers }) {
   const { handleExperience, handleAddExperience, handleRemoveExperience } =
     handlers;
   return (
-    <div className="formContainer">
+    <div className="sectionContainer">
       <h2>Professional Experience</h2>
       {experience.map((info, i) => {
         return (
-          <div key={info.id}>
-            <button onClick={() => changeIsShow(i)}> {info.companyName}</button>
-            <button onClick={() => handleRemoveExperience(i)}>Remove</button>
+          <div key={info.id} className="formContainer">
+            <div className="formHeader">
+              <button onClick={() => changeIsShow(i)}>
+                {info.companyName}
+              </button>
+              <button
+                className="deleteForm"
+                onClick={() => handleRemoveExperience(i)}
+              >
+                <i className="material-symbols-outlined">delete</i>
+              </button>
+            </div>
             {!isShow[i] ? null : (
               <ExperienceForm
                 info={info}
@@ -31,7 +42,12 @@ export function Experience({ experience, handlers }) {
           </div>
         );
       })}
-      <button onClick={handleAddExperience}>Add +</button>
+      <div className="addFormButton">
+        <button onClick={handleAddExperience}>
+          Add
+          <i className="material-symbols-outlined">add</i>
+        </button>
+      </div>
     </div>
   );
 }
