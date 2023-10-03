@@ -11,7 +11,7 @@ export function InputCV({
   experienceHandlers,
 }) {
   return (
-    <div className="m-3 flex w-96 flex-col">
+    <div className="my-3 mr-2 flex w-96 flex-col">
       <div className="sectionContainer">
         <h1 className="text-xl font-bold">CV Maker</h1>
       </div>
